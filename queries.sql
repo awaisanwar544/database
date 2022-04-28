@@ -42,11 +42,5 @@ SELECT animals.name FROM animals JOIN species ON species.id = animals.species_id
 SELECT animals.name FROM animals JOIN owners ON owners.id = animals.owner_id WHERE escape_attempts = 0 AND owners.full_name = 'Dean Winchester';
 SELECT owners.full_name, COUNT(*) as total FROM animals JOIN owners ON owners.id = animals.owner_id GROUP BY owners.full_name ORDER BY total DESC LIMIT 1;
 
-SELECT animals.name, vets.name, visits.visit_date FROM animals JOIN visits ON visits.animal_id = animals.id JOIN vets ON visits.vets_id = vets.id WHERE vets.name = 'William Tatcher' ORDER BY visits.visit_date DESC LIMIT 1;
-SELECT ROW_NUMBER() OVER (ORDER BY animals.name) FROM animals JOIN visits ON visits.animal_id = animals.id JOIN vets ON visits.vets_id = vets.id WHERE vets.name = 'Stephanie Mendez' GROUP BY animals.name, vets.name ORDER BY ROW_NUMBER() OVER (ORDER BY animals.name) DESC LIMIT 1;
-SELECT vets.name, species.name FROM vets LEFT JOIN specializations ON vets_id = vets.id LEFT JOIN species ON species_id = species.id;
-SELECT animals.name FROM animals JOIN visits ON visits.animal_id = animals.id JOIN vets ON visits.vets_id = vets.id WHERE vets.name = 'Stephanie Mendez' AND visits.visit_date BETWEEN '2020-04-01' AND '2020-08-30';
-SELECT animals.name, COUNT(*) FROM animals JOIN visits ON visits.animal_id = animals.id GROUP BY animals.name ORDER BY COUNT(*) DESC LIMIT 1;
-SELECT animals.name, vets.name, visits.visit_date FROM animals JOIN visits ON visits.animal_id = animals.id JOIN vets ON visits.vets_id = vets.id ORDER BY visits.visit_date DESC LIMIT 1;
-SELECT COUNT(animals.name) FROM visits INNER JOIN animals ON animal_id= animals.id INNER JOIN vets ON vets_id=vets.id WHERE animals.species_id NOT IN((SELECT species_id FROM specializations WHERE vets_id=visits.vets_id));
-SELECT species.name FROM animals INNER JOIN visits ON animals.id=animal_id INNER JOIN vets ON vets_id=vets.id INNER JOIN species ON animals.species_id=species.id WHERE vets.name='Maisy Smith' GROUP BY species.name ORDER BY  COUNT(species.name) DESC LIMIT 1;
+
+
