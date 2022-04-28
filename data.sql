@@ -29,6 +29,7 @@ UPDATE animals SET owner_id = 1 WHERE name = 'Agumon' RETURNING *;
 UPDATE animals SET owner_id = 2 WHERE name = 'Gabumon' OR name = 'Pikachu' RETURNING *;
 UPDATE animals SET owner_id = 3 WHERE name = 'Devimon' OR name = 'Plantmon' RETURNING *;
 UPDATE animals SET owner_id = 4 WHERE name = 'Charmander' OR name = 'Squirtle' OR name = 'Blossom' RETURNING *;
+
 UPDATE animals SET owner_id = 5 WHERE name = 'Angemon' OR name = 'Boarmon' RETURNING *;
 
 /* add data in vets table */
@@ -68,3 +69,4 @@ INSERT INTO visits (vets_id, animal_id, visit_date) VALUES(2, 9, '2020-08-03');
 INSERT INTO visits (vets_id, animal_id, visit_date) VALUES(3, 10, '2020-06-24');
 INSERT INTO visits (vets_id, animal_id, visit_date) VALUES(1, 10, '2021-01-11');
 
+UPDATE animals SET owner_id = 5 WHERE name = 'Angemon' OR name = 'Boarmon' RETURNING *;

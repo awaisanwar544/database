@@ -42,6 +42,7 @@ SELECT animals.name FROM animals JOIN species ON species.id = animals.species_id
 SELECT animals.name FROM animals JOIN owners ON owners.id = animals.owner_id WHERE escape_attempts = 0 AND owners.full_name = 'Dean Winchester';
 SELECT owners.full_name, COUNT(*) as total FROM animals JOIN owners ON owners.id = animals.owner_id GROUP BY owners.full_name ORDER BY total DESC LIMIT 1;
 
+
 /* Who was the last animal seen by William Tatcher? */
 SELECT animals.name, vets.name, visits.visit_date FROM animals JOIN visits ON visits.animal_id = animals.id JOIN vets ON visits.vets_id = vets.id WHERE vets.name = 'William Tatcher' ORDER BY visits.visit_date DESC LIMIT 1;
 /* How many different animals did Stephanie Mendez see? */

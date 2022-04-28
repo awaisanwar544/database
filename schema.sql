@@ -59,3 +59,6 @@ CREATE TABLE visits (
 );
 
 ALTER TABLE visits ADD COLUMN visit_date DATE;
+
+ALTER TABLE animals ADD CONSTRAINT owner_id_fkey FOREIGN KEY (owner_id) REFERENCES owners(id);
+
