@@ -34,6 +34,8 @@ ALTER TABLE animals ADD COLUMN owner_id INT;
 ALTER TABLE owners ADD CONSTRAINT owners_pkey PRIMARY KEY (id);
 ALTER TABLE animals ADD CONSTRAINT owner_id_fkey FOREIGN KEY (owner_id) REFERENCES owners(id);
 
+/* create vets table */
+
 CREATE TABLE vets (
     id INT GENERATED ALWAYS AS IDENTITY,
     name VARCHAR(250) NOT NULL,
@@ -42,10 +44,14 @@ CREATE TABLE vets (
     PRIMARY KEY (id)
 );
 
+/* create specializations table */
+
 CREATE TABLE specializations (
     vets_id INT REFERENCES vets(id) ON DELETE CASCADE ON UPDATE CASCADE,
     species_id INT REFERENCES species(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+/* create visits table */
 
 CREATE TABLE visits (
     vets_id INT REFERENCES vets(id) ON DELETE CASCADE ON UPDATE CASCADE,
