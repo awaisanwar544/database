@@ -9,7 +9,8 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 ## ERD
 
-![Entity Relationship Diagram](https://user-images.githubusercontent.com/87834222/166567584-ee5597f8-fb3c-4a2d-8d31-309bc0bf5c59.jpeg)
+![Entity Relationship Diagram](https://user-images.githubusercontent.com/87834222/166572853-b11901be-0fd2-49bf-8643-613ebc282c0e.jpeg)
+
 
 
 ## Authors
